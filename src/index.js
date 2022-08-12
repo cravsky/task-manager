@@ -5,7 +5,7 @@ const taskRouter = require('./routers/task')
 const auth = require('./middleware/auth')
 
 const app = express()
-const port = process.env.port
+const port = process.env.PORT
 
 app.use(express.json())
 app.use(userRouter)
