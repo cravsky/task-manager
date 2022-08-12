@@ -9,6 +9,17 @@ const app = express()
 const port = process.env.PORT
 
 app.use(express.json())
+app.get('/', (req, res) => {
+    try {
+        await
+        res.status(200).send('Everything is fine')
+    } catch (e) {
+        res.status(400).send()
+    }
+
+})
+
+
 app.use(userRouter)
 app.use(taskRouter)
 
