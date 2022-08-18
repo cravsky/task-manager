@@ -1,6 +1,6 @@
 const loginForm = document.querySelector('form')
 
-function createUserRequest(e) {
+function createLoginRequest(e) {
     const formData = new FormData(e.target)
     const newUser = JSON.stringify(Object.fromEntries(formData.entries()))
     return newUser
@@ -9,7 +9,7 @@ function createUserRequest(e) {
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault()
 
-    const newUser = createUserRequest(e)
+    const newUser = createLoginRequest(e)
 
     fetch("/users", {
         method: "POST",
