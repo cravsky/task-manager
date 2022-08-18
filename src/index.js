@@ -23,21 +23,13 @@ hbs.registerPartials(partialsPath)
 app.use(express.static(publicDirectoryPath))
 
 app.get('', (req, res) => {
-    res.render('login', {
+    res.render('createUser', {
         title: 'Weather',
         name: 'Andrew Mead'
     })
 })
 
 app.use(express.json())
-// app.get('/', (req, res) => {
-//     try {
-//         res.status(200).send('Everything is fine')
-//     } catch (e) {
-//         res.status(400).send()
-//     }
-
-// })
 
 app.use(userRouter)
 app.use(taskRouter)
