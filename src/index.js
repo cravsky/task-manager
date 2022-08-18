@@ -22,8 +22,16 @@ hbs.registerPartials(partialsPath)
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath))
 
+// TODO: Remove parameters
 app.get('', (req, res) => {
     res.render('createUser', {
+        title: 'Weather',
+        name: 'Andrew Mead'
+    })
+})
+
+app.get('/login', (req, res) => {
+    res.render('login', {
         title: 'Weather',
         name: 'Andrew Mead'
     })
